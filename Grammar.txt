@@ -1,0 +1,38 @@
+Walker Todd
+CS430 - Grammar
+2/28/2024
+Dr Chris Johnson
+
+parse = expression
+
+expression = addititive_expression 
+
+addititive_expression = expression  (+ , -) expression
+    ||  multiplicative_expression
+ 
+multiplicative_expression = expression  (*, /, **, %) expression
+    || bitwise_expressions
+
+logical_expressions = expression  (&& , ||, !) expression
+    || bitwise_expressions
+
+bitwise_expressions = expression  (&, |, ~ , <<, >>, ^) expression
+    || relational_expression
+
+relational_expression = expression  (<, >, <=, >=, ==, !=) expression
+    || primary_expression
+
+primary_expression = (expression)
+    || cells
+
+cells = cells
+    || primatives
+
+primatives = integer
+ || boolean
+ || float
+ || string
+ || min 
+ || max 
+ || mean 
+ || sum
